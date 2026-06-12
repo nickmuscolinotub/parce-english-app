@@ -54,6 +54,8 @@
   .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:inherit;font-weight:700;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:1rem 1.7rem;font-size:1.05rem;transition:transform .2s,box-shadow .2s}
   .btn-primary{background:var(--rojo);color:#fff;box-shadow:0 12px 28px -10px rgba(206,17,38,.6)}
   .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 36px -12px rgba(206,17,38,.7)}
+  .byline{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.9rem;color:var(--azul-deep);background:#fff;border:1px solid var(--line);padding:.5rem 1.1rem;border-radius:999px;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+  .byline strong{color:var(--rojo)}
 
   .how{padding:10px 0 0}
   .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
@@ -162,6 +164,7 @@
     <span class="eyebrow">🇨🇴 Para hispanohablantes · tu entrenador personal de inglés</span>
     <h1 class="title">Construye el inglés,<br>frase por <em>frase</em>.</h1>
     <p class="promise" id="greeting">Escribe cada respuesta en inglés. Sin memorizar, sin presión, sin reprobar — solo vas uniendo piezas que ya conoces en frases más grandes.</p>
+    <div class="byline">Hecho por <strong>Nick</strong>, para ti 💛</div>
     <button class="btn btn-primary" onclick="document.getElementById('train').scrollIntoView()">Empezar la lección de hoy →</button>
     <div class="how" style="margin-top:34px">
       <div class="how-grid">
