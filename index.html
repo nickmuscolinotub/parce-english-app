@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Parce · Aprende inglés</title>
-<meta name="description" content="Parce — tu entrenador personal de inglés. Construye frases escribiéndolas. Sin memorizar, sin presión.">
+<meta name="description" content="Parce — tu entrenador personal de inglés. Construye frases escribiéndolas. Sin memorizar, sin presión. Curso completo de 90 días.">
 <meta name="theme-color" content="#FCD116">
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,20 +43,20 @@
   .stats .s.xp{color:var(--azul-deep)}
   .stats .s.streak{color:var(--rojo-deep)}
 
-  header.hero{position:relative;padding:64px 0 46px;overflow:hidden;text-align:center}
+  header.hero{position:relative;padding:64px 0 40px;overflow:hidden;text-align:center}
   header.hero::before{content:"";position:absolute;inset:0;z-index:0;
     background:radial-gradient(70% 70% at 50% -10%,rgba(252,209,22,.9),transparent 62%),linear-gradient(180deg,var(--crema-2),var(--crema))}
   .hero .wrap{position:relative;z-index:1}
   .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--azul-deep);background:rgba(0,56,147,.09);padding:.4rem .85rem;border-radius:999px;margin-bottom:1.2rem}
   h1.title{font-size:clamp(2.6rem,8vw,4.4rem);line-height:.94}
   h1.title em{font-style:italic;color:var(--rojo)}
-  .promise{font-family:"Fraunces";font-style:italic;font-size:1.12rem;line-height:1.45;color:var(--ink-soft);max-width:42ch;margin:1.2rem auto 1.8rem}
-  .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:inherit;font-weight:700;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:1rem 1.7rem;font-size:1.05rem;transition:transform .2s,box-shadow .2s}
-  .btn-primary{background:var(--rojo);color:#fff;box-shadow:0 12px 28px -10px rgba(206,17,38,.6)}
-  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 36px -12px rgba(206,17,38,.7)}
   .byline{display:inline-flex;align-items:center;gap:.55rem;font-family:"Fraunces",Georgia,serif;font-weight:800;font-size:clamp(1.15rem,3.4vw,1.7rem);color:#fff;background:linear-gradient(135deg,var(--rojo),var(--rojo-deep));padding:.75rem 1.7rem;border-radius:999px;margin:1.5rem 0 .4rem;box-shadow:0 16px 34px -10px rgba(206,17,38,.6);animation:bylinePulse 2.4s ease-in-out infinite}
   .byline strong{color:var(--amarillo)}
   @keyframes bylinePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+  .promise{font-family:"Fraunces";font-style:italic;font-size:1.12rem;line-height:1.45;color:var(--ink-soft);max-width:42ch;margin:1rem auto 1.8rem}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:inherit;font-weight:700;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:1rem 1.7rem;font-size:1.05rem;transition:transform .2s,box-shadow .2s}
+  .btn-primary{background:var(--rojo);color:#fff;box-shadow:0 12px 28px -10px rgba(206,17,38,.6)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 36px -12px rgba(206,17,38,.7)}
 
   .how{padding:10px 0 0}
   .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
@@ -70,11 +70,20 @@
   .kicker{font-weight:800;letter-spacing:.16em;text-transform:uppercase;font-size:.76rem;color:var(--rojo);margin-bottom:.7rem;text-align:center}
   .sec-h{font-size:clamp(1.9rem,5vw,2.8rem);text-align:center;margin-bottom:1.6rem}
 
-  .days{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.6rem}
-  .day-chip{position:relative;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink);font-family:"Fraunces";font-weight:800;font-size:1.05rem;width:54px;height:54px;border-radius:16px;transition:all .2s;display:flex;align-items:center;justify-content:center}
+  .picker{margin-bottom:1.6rem}
+  .stage-group{margin-bottom:1.1rem}
+  .stage-head{display:flex;align-items:center;gap:.6rem;margin:0 0 .55rem;font-size:.95rem;color:var(--ink-soft)}
+  .stage-head .sg-n{font-family:"Fraunces";font-weight:900;font-size:1.05rem;color:#fff;background:var(--azul);width:1.8rem;height:1.8rem;border-radius:8px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .stage-head b{color:var(--ink)}
+  .stage-head .sg-range{color:var(--rojo);font-weight:700;font-size:.78rem;margin-left:.3rem}
+  .stage-head .sg-prog{margin-left:auto;font-size:.78rem;font-weight:700;color:var(--verde)}
+  .chip-row{display:flex;gap:.42rem;flex-wrap:wrap}
+  .day-chip{position:relative;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink);font-family:"Fraunces";font-weight:800;font-size:.95rem;width:46px;height:46px;border-radius:13px;transition:all .15s;display:flex;align-items:center;justify-content:center}
   .day-chip:hover{transform:translateY(-2px)}
   .day-chip.active{background:var(--azul);color:#fff;border-color:var(--azul)}
-  .day-chip.done::after{content:"✓";position:absolute;top:-6px;right:-6px;width:20px;height:20px;background:var(--verde);color:#fff;font-family:sans-serif;font-size:.7rem;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+  .day-chip.done{background:rgba(47,125,79,.12);border-color:rgba(47,125,79,.4)}
+  .day-chip.done.active{background:var(--azul);color:#fff}
+  .day-chip.done::after{content:"✓";position:absolute;top:-5px;right:-5px;width:18px;height:18px;background:var(--verde);color:#fff;font-family:sans-serif;font-size:.65rem;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.2)}
 
   .player{background:var(--ink);border-radius:26px;padding:clamp(22px,4vw,40px);box-shadow:var(--shadow-lift);color:var(--crema);position:relative;overflow:hidden}
   .player::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(to right,var(--amarillo) 0 50%,var(--azul) 50% 75%,var(--rojo) 75% 100%)}
@@ -93,7 +102,7 @@
   .stuck:hover{color:var(--amarillo)}
 
   .feedback{margin-top:1.4rem;border-radius:16px;padding:1.1rem 1.2rem;opacity:0;max-height:0;overflow:hidden;transition:opacity .35s,max-height .35s,padding .35s}
-  .feedback.show{opacity:1;max-height:320px}
+  .feedback.show{opacity:1;max-height:360px}
   .feedback.ok{background:rgba(47,125,79,.18);border:1px solid rgba(47,125,79,.5)}
   .feedback.casi{background:rgba(242,184,7,.16);border:1px solid rgba(242,184,7,.5)}
   .feedback.miss{background:rgba(206,17,38,.16);border:1px solid rgba(206,17,38,.45)}
@@ -165,8 +174,8 @@
     <span class="eyebrow">🇨🇴 Para hispanohablantes · tu entrenador personal de inglés</span>
     <h1 class="title">Construye el inglés,<br>frase por <em>frase</em>.</h1>
     <div class="byline">💛 Hecho por <strong>Nick</strong>, para ti</div>
-    <p class="promise" id="greeting">Escribe cada respuesta en inglés. Sin memorizar, sin presión, sin reprobar — solo vas uniendo piezas que ya conoces en frases más grandes.</p>
-    <button class="btn btn-primary" onclick="document.getElementById('train').scrollIntoView()">Empezar la lección de hoy →</button>
+    <p class="promise" id="greeting">Escribe cada respuesta en inglés. Sin memorizar, sin presión, sin reprobar — solo vas uniendo piezas que ya conoces en frases más grandes. 90 días, de cero a una conversación real.</p>
+    <button class="btn btn-primary" id="startBtn">Empezar la lección de hoy →</button>
     <div class="how" style="margin-top:34px">
       <div class="how-grid">
         <div class="how-item"><div class="ic">⌨️</div><h4>Escríbelo</h4><p>Produce la respuesta tú mismo — la puntuación y las mayúsculas son opcionales.</p></div>
@@ -179,11 +188,11 @@
 
 <section id="train">
   <div class="wrap">
-    <div class="kicker">Tu primera semana</div>
+    <div class="kicker">El curso completo · 90 días</div>
     <h2 class="sec-h">Elige un día. Empieza a construir.</h2>
-    <div class="days" id="dayChips"></div>
+    <div class="picker" id="picker"><p style="text-align:center;color:var(--ink-soft)">Cargando lecciones…</p></div>
     <div class="player" id="player">
-      <div class="p-top"><span id="pDay">Día 1</span><span id="pCount">1 / 5</span></div>
+      <div class="p-top"><span id="pDay">—</span><span id="pCount"></span></div>
       <div class="p-label">Escribe esto en inglés:</div>
       <div class="p-prompt" id="pPrompt"></div>
       <div class="p-note" id="pNote"></div>
@@ -204,15 +213,15 @@
 
 <section class="journey">
   <div class="wrap">
-    <div class="kicker">Lo que viene · 90 días</div>
+    <div class="kicker">El camino · 90 días</div>
     <h2 class="sec-h" style="color:#fff">De cero a una conversación real.</h2>
     <div class="stages">
       <div class="stage"><div class="sn">1</div><div><h4><em>Arranque</em> · Ignición</h4><p>Cognados + verbos motor: want / can / have to / going to + cualquier verbo.</p></div><div class="meta">Días 1–12</div></div>
-      <div class="stage"><div class="sn">2</div><div><h4><em>El Presente</em></h4><p>Habla del ahora en inglés — verbos, preguntas, negación.</p></div><div class="meta">Días 13–30</div></div>
-      <div class="stage"><div class="sn">3</div><div><h4><em>Conexiones</em></h4><p>because, but, so, when, if — y los pronombres.</p></div><div class="meta">Días 31–48</div></div>
-      <div class="stage"><div class="sn">4</div><div><h4><em>El Pasado</em></h4><p>Cuenta lo que pasó, por contraste y no por tablas.</p></div><div class="meta">Días 49–66</div></div>
-      <div class="stage"><div class="sn">5</div><div><h4><em>Futuro y Deseos</em></h4><p>will, would y los condicionales.</p></div><div class="meta">Días 67–82</div></div>
-      <div class="stage"><div class="sn">6</div><div><h4><em>Conversación Real</em></h4><p>Modismos, expresiones y conversación real en inglés.</p></div><div class="meta">Días 83–90</div></div>
+      <div class="stage"><div class="sn">2</div><div><h4><em>El Presente</em></h4><p>El presente en inglés — to be, el -s de la 3a persona, preguntas con do/does.</p></div><div class="meta">Días 13–30</div></div>
+      <div class="stage"><div class="sn">3</div><div><h4><em>Conexiones</em></h4><p>Conectores, pronombres, comparativos, comida, direcciones, compras.</p></div><div class="meta">Días 31–48</div></div>
+      <div class="stage"><div class="sn">4</div><div><h4><em>El Pasado</em></h4><p>Cuenta lo que pasó — pasado simple, pasado continuo, presente perfecto.</p></div><div class="meta">Días 49–66</div></div>
+      <div class="stage"><div class="sn">5</div><div><h4><em>Futuro y Condicionales</em></h4><p>will, would, condicionales, modales y phrasal verbs.</p></div><div class="meta">Días 67–82</div></div>
+      <div class="stage"><div class="sn">6</div><div><h4><em>Conversación Real</em></h4><p>Inglés del día a día, contracciones y conversación natural.</p></div><div class="meta">Días 83–90</div></div>
     </div>
   </div>
 </section>
@@ -222,9 +231,9 @@
     <div class="kicker">Metas</div>
     <h2 class="sec-h">Dónde vas a estar.</h2>
     <div class="miles">
-      <div class="mile m30"><div class="big">30</div><div class="cefr">A1 · ~300 palabras</div><ul><li>Café y taxi, resueltos</li><li>Preguntar y responder</li><li>want / can / have to / will</li></ul></div>
-      <div class="mile m60"><div class="big">60</div><div class="cefr">A2 · ~700 palabras</div><ul><li>Contar historias en pasado</li><li>Conectar ideas con naturalidad</li><li>Mercado, médico, planes</li></ul></div>
-      <div class="mile m90"><div class="big">90</div><div class="cefr">A2+/B1 · ~1,200 palabras</div><ul><li>Una conversación real de ~10 min</li><li>Futuro, "would", deseos</li><li>Formal ↔ informal</li></ul></div>
+      <div class="mile m30"><div class="big">30</div><div class="cefr">A1 · ~300 palabras</div><ul><li>Café y taxi, resueltos</li><li>Preguntar y responder</li><li>Describirte y tu rutina</li></ul></div>
+      <div class="mile m60"><div class="big">60</div><div class="cefr">A2 · ~700 palabras</div><ul><li>Contar historias en pasado</li><li>Conectar ideas</li><li>Mercado, médico, planes</li></ul></div>
+      <div class="mile m90"><div class="big">90</div><div class="cefr">A2+/B1 · ~1,200 palabras</div><ul><li>Una conversación real de ~10 min</li><li>Futuro, condicionales, modales</li><li>Inglés casual del día a día</li></ul></div>
     </div>
   </div>
 </section>
@@ -235,62 +244,21 @@
     <h3>Listo, parce. Nos vemos mañana.</h3>
     <p>Aparece casi todos los días. Ese es todo el secreto.</p>
     <button class="reset" id="btnReset">Borrar mi progreso</button>
-    <p class="fine">Una herramienta de aprendizaje personal basada en los principios públicos del método Michel Thomas — descubrimiento guiado, sin memorización mecánica, confianza al construir. Currículo original de inglés.</p>
+    <p class="fine">Una herramienta de aprendizaje personal basada en los principios públicos del método Michel Thomas — descubrimiento guiado, sin memorización mecánica, confianza al construir. Curso original de inglés de 90 días.</p>
   </div>
 </footer>
 
 <script>
-  // ---------- contenido: Días 1–7 (prompt en español, respuesta en inglés) ----------
-  const DAYS=[
-    {n:1,t:"Cognados + 'is'",items:[
-      {en:'"Es posible."',es:'It is possible.'},
-      {en:'"Es importante."',es:'It is important.'},
-      {en:'"No es posible."',es:'It is not possible.'},
-      {en:'"Es muy importante para mí."',es:'It is very important for me.'},
-      {en:'"Es posible, pero no es importante para mí."',es:'It is possible, but it is not important for me.',v:true}
-    ]},
-    {n:2,t:"El motor: I want to",items:[
-      {en:'"Quiero hablar."',es:'I want to speak.'},
-      {en:'"Quiero comer."',es:'I want to eat.'},
-      {en:'"Quiero hablar inglés."',es:'I want to speak English.'},
-      {en:'"Quiero hablar inglés contigo."',es:'I want to speak English with you.'},
-      {en:'"Quiero hablar inglés, pero no quiero comer ahora."',es:"I want to speak English, but I don't want to eat now.",v:true}
-    ]},
-    {n:3,t:"I can + preguntas",items:[
-      {en:'"Puedo hablar inglés."',es:'I can speak English.'},
-      {en:'"¿Puedo comer ahora?"',es:'Can I eat now?'},
-      {en:'"Puedo hacerlo."',es:'I can do it.'},
-      {en:'"¿Puedo hacerlo ahora?"',es:'Can I do it now?'},
-      {en:'"¿Puedo hacerlo ahora, o no es posible?"',es:'Can I do it now, or is it not possible?',v:true}
-    ]},
-    {n:4,t:"I have to + el café",items:[
-      {en:'"Tengo que trabajar."',es:'I have to work.'},
-      {en:'"Tengo que ir ahora."',es:'I have to go now.'},
-      {en:'"Quiero un café."',es:'I want a coffee.',note:'Ojo: en inglés "un tinto" se dice simplemente "a coffee".'},
-      {en:'"Quiero un café, pero tengo que trabajar."',es:'I want a coffee, but I have to work.'},
-      {en:'"No puedo hablar ahora porque tengo que trabajar."',es:"I can't speak now because I have to work.",v:true}
-    ]},
-    {n:5,t:"I'm going to — el futuro fácil",items:[
-      {en:'"Voy a hablar inglés."',es:"I'm going to speak English."},
-      {en:'"Voy a comer ahora."',es:"I'm going to eat now."},
-      {en:'"Mañana voy a trabajar."',es:"Tomorrow I'm going to work."},
-      {en:'"Hoy tengo que trabajar, pero mañana voy a hablar inglés contigo."',es:"Today I have to work, but tomorrow I'm going to speak English with you.",v:true}
-    ]},
-    {n:6,t:"Do you want…? Can you…?",items:[
-      {en:'"¿Quieres comer ahora?"',es:'Do you want to eat now?'},
-      {en:'"¿Puedes hablar inglés?"',es:'Can you speak English?'},
-      {en:'"¿Quieres un café?"',es:'Do you want a coffee?'},
-      {en:'"¿Quieres hablar inglés conmigo mañana?"',es:'Do you want to speak English with me tomorrow?',v:true}
-    ]},
-    {n:7,t:"Todo junto",items:[
-      {en:'"Quiero un café contigo hoy."',es:'I want a coffee with you today.'},
-      {en:'"¿Puedes hablar inglés ahora?"',es:'Can you speak English now?'},
-      {en:'"Voy a hablar inglés mañana."',es:"I'm going to speak English tomorrow."},
-      {en:'"¿Quieres hablar inglés conmigo mañana, o no es posible?"',es:'Do you want to speak English with me tomorrow, or is it not possible?',v:true}
-    ]}
+  if('scrollRestoration' in history){history.scrollRestoration='manual';}
+  const STAGES=[
+    {name:"Arranque",sub:"Ignición",a:1,b:12},
+    {name:"El Presente",sub:"The present",a:13,b:30},
+    {name:"Conexiones",sub:"Connections",a:31,b:48},
+    {name:"El Pasado",sub:"The past",a:49,b:66},
+    {name:"Futuro y Condicionales",sub:"Future",a:67,b:82},
+    {name:"Conversación Real",sub:"Real talk",a:83,b:90}
   ];
 
-  // ---------- almacenamiento (clave propia para no chocar con la app de español) ----------
   const KEY='parce.en.v1';
   const load=()=>{try{return JSON.parse(localStorage.getItem(KEY))||{}}catch(e){return{}}};
   const save=s=>localStorage.setItem(KEY,JSON.stringify(s));
@@ -308,14 +276,14 @@
   }
   paintStats();
 
-  // ---------- comparación (inglés: expande contracciones) ----------
+  // English matching: expand common contractions so it's=it is, can't=cannot, etc.
   const CONTR=[
-    [/\bit's\b/g,'it is'],[/\bthat's\b/g,'that is'],[/\bwhat's\b/g,'what is'],[/\bhe's\b/g,'he is'],[/\bshe's\b/g,'she is'],
+    [/\bit's\b/g,'it is'],[/\bthat's\b/g,'that is'],[/\bwhat's\b/g,'what is'],[/\bhe's\b/g,'he is'],[/\bshe's\b/g,'she is'],[/\bhow's\b/g,'how is'],[/\bhere's\b/g,'here is'],[/\bthere's\b/g,'there is'],
     [/\bi'm\b/g,'i am'],[/\byou're\b/g,'you are'],[/\bwe're\b/g,'we are'],[/\bthey're\b/g,'they are'],
     [/\bdon't\b/g,'do not'],[/\bdoesn't\b/g,'does not'],[/\bdidn't\b/g,'did not'],
-    [/\bcan't\b/g,'cannot'],[/\bcan not\b/g,'cannot'],[/\bwon't\b/g,'will not'],
-    [/\bisn't\b/g,'is not'],[/\baren't\b/g,'are not'],[/\bwasn't\b/g,'was not'],
-    [/\bi'd\b/g,'i would'],[/\bi'll\b/g,'i will'],[/\bi've\b/g,'i have'],[/\blet's\b/g,'let us']
+    [/\bcan't\b/g,'cannot'],[/\bcan not\b/g,'cannot'],[/\bwon't\b/g,'will not'],[/\bwouldn't\b/g,'would not'],[/\bshouldn't\b/g,'should not'],
+    [/\bisn't\b/g,'is not'],[/\baren't\b/g,'are not'],[/\bwasn't\b/g,'was not'],[/\bweren't\b/g,'were not'],[/\bhaven't\b/g,'have not'],[/\bhasn't\b/g,'has not'],
+    [/\bi'd\b/g,'i would'],[/\bi'll\b/g,'i will'],[/\bi've\b/g,'i have'],[/\byou'll\b/g,'you will'],[/\bwe'll\b/g,'we will'],[/\bshe'll\b/g,'she will'],[/\bhe'll\b/g,'he will'],[/\blet's\b/g,'let us']
   ];
   function norm(s){
     s=s.toLowerCase().replace(/[’`]/g,"'");
@@ -326,18 +294,46 @@
     for(let i=1;i<=b.length;i++)for(let j=1;j<=a.length;j++)m[i][j]=b[i-1]===a[j-1]?m[i-1][j-1]:Math.min(m[i-1][j-1]+1,m[i][j-1]+1,m[i-1][j]+1);
     return m[b.length][a.length];}
 
-  // ---------- reproductor ----------
-  let dayIdx=0, qIdx=0, awarded=0;
-  const chips=$('dayChips');
-  DAYS.forEach((d,i)=>{const b=document.createElement('button');b.className='day-chip';b.textContent=d.n;b.onclick=()=>openDay(i);chips.appendChild(b);});
-  function paintChips(){[...chips.children].forEach((c,i)=>{c.classList.toggle('active',i===dayIdx);c.classList.toggle('done',state.completed.includes(DAYS[i].n));});}
+  let DAYS=[], dayIdx=0, qIdx=0, awarded=0;
+  const picker=$('picker');
 
-  function openDay(i){dayIdx=i;qIdx=0;awarded=0;buildProg();paintChips();renderQ();$('train').scrollIntoView({behavior:'smooth'});}
+  function buildPicker(){
+    picker.innerHTML='';
+    STAGES.forEach((st,si)=>{
+      const grp=document.createElement('div');grp.className='stage-group';
+      const done=DAYS.filter(d=>d.n>=st.a&&d.n<=st.b&&state.completed.includes(d.n)).length;
+      const total=st.b-st.a+1;
+      const h=document.createElement('div');h.className='stage-head';
+      h.innerHTML='<span class="sg-n">'+(si+1)+'</span><span><b>'+st.name+'</b> · '+st.sub+'<span class="sg-range">Días '+st.a+'–'+st.b+'</span></span><span class="sg-prog">'+done+'/'+total+'</span>';
+      grp.appendChild(h);
+      const row=document.createElement('div');row.className='chip-row';
+      for(let n=st.a;n<=st.b;n++){
+        const idx=DAYS.findIndex(d=>d.n===n);
+        if(idx<0)continue;
+        const b=document.createElement('button');b.className='day-chip';b.textContent=n;b.dataset.idx=idx;
+        b.onclick=()=>openDay(idx,true);
+        row.appendChild(b);
+      }
+      grp.appendChild(row);
+      picker.appendChild(grp);
+    });
+    paintChips();
+  }
+  function paintChips(){
+    [...picker.querySelectorAll('.day-chip')].forEach(c=>{
+      const idx=+c.dataset.idx;
+      c.classList.toggle('active',idx===dayIdx);
+      c.classList.toggle('done',state.completed.includes(DAYS[idx].n));
+    });
+  }
+
+  function openDay(i,doScroll){dayIdx=i;qIdx=0;awarded=0;buildProg();paintChips();renderQ();if(doScroll)$('train').scrollIntoView({behavior:'smooth'});}
   function buildProg(){const p=$('pProg');p.innerHTML='';DAYS[dayIdx].items.forEach(()=>p.appendChild(document.createElement('span')));}
   function renderQ(){
     const d=DAYS[dayIdx],it=d.items[qIdx];
     $('pDay').textContent='Día '+d.n+' · '+d.t;
     $('pCount').textContent=(qIdx+1)+' / '+d.items.length;
+    $('pPrompt').className='p-prompt';
     $('pPrompt').textContent=it.v?('★ '+it.en):it.en;
     $('pNote').textContent=it.note||(it.v?'Tu frase de victoria — la grande.':'');
     $('pInput').value='';
@@ -350,7 +346,7 @@
     const verdict=kind==='ok'?'¡Correcto! ⭐ +'+(it.v?25:10):kind==='casi'?'¡Casi! ⭐ +5':'Así se dice 👇';
     const tip=kind==='ok'?(it.v?'Esa es una frase completa en inglés. ¡Bien hecho!':'Clic — otra pieza en su lugar.'):kind==='casi'?'Estuviste a una letra — mira el modelo:':'No pasa nada. Léelo, dilo una vez y sigue.';
     fb.className='feedback show '+kind;
-    fb.innerHTML='<div class="verdict">'+verdict+'</div><div class="es">'+it.es+'</div><div class="tip">'+tip+'</div>'+
+    fb.innerHTML='<div class="verdict">'+verdict+'</div><div class="es">'+it.es+'</div>'+(it.note?'<div class="tip" style="margin-bottom:.4rem">💡 '+it.note+'</div>':'')+'<div class="tip">'+tip+'</div>'+
       '<button class="btn-next" id="btnNext">'+(qIdx<DAYS[dayIdx].items.length-1?'Siguiente →':'Terminar sesión ✓')+'</button>';
     $('pInputZone').style.display='none';
     $('btnNext').onclick=next;
@@ -373,30 +369,36 @@
   function finish(){
     state.xp+=awarded;
     if(!state.completed.includes(DAYS[dayIdx].n))state.completed.push(DAYS[dayIdx].n);
-    bumpStreak();save(state);paintStats();paintChips();
+    bumpStreak();save(state);paintStats();buildPicker();
     $('pInputZone').style.display='none';
     $('pFeedback').className='feedback';$('pFeedback').innerHTML='';
     const nextDay=dayIdx<DAYS.length-1?dayIdx+1:null;
     $('pDay').textContent='Día '+DAYS[dayIdx].n+' completo';
-    $('pCount').textContent='';
-    $('pNote').textContent='';
-    const host=$('player').querySelector('.p-prompt');
+    $('pCount').textContent='';$('pNote').textContent='';
+    const host=$('pPrompt');host.className='p-prompt';
     host.innerHTML='<div class="p-finish"><div class="big">🎉</div><div class="es">¡Bien hecho, parce!</div>'+
-      '<p style="color:rgba(255,247,222,.72);margin:.4rem 0 1rem">Construiste '+DAYS[dayIdx].items.length+' frases — sin una sola lista de vocabulario. <span class="xp-pop">+'+awarded+' ⭐</span></p>'+
-      (nextDay!==null?'<button class="btn-check" id="btnGoNext" style="padding:.8rem 1.5rem">Día '+DAYS[nextDay].n+' →</button> ':'<p style="color:var(--amarillo);font-family:Fraunces;font-size:1.2rem">Terminaste la primera semana. 🎉</p>')+
+      '<p style="color:rgba(255,247,222,.72);margin:.4rem 0 1rem">Construiste '+DAYS[dayIdx].items.length+' frases. <span class="xp-pop">+'+awarded+' ⭐</span> · '+state.completed.length+'/90 días</p>'+
+      (nextDay!==null?'<button class="btn-check" id="btnGoNext" style="padding:.8rem 1.5rem">Día '+DAYS[nextDay].n+' →</button> ':'<p style="color:var(--amarillo);font-family:Fraunces;font-size:1.3rem">🏆 ¡Terminaste los 90 días! Now you speak English.</p>')+
       ' <button class="btn-next" id="btnRedo" style="background:transparent;border:1px solid rgba(255,247,222,.3);color:var(--crema)">Repetir este día ↻</button></div>';
-    if(nextDay!==null)$('btnGoNext').onclick=()=>{const h=$('player').querySelector('.p-prompt');h.className='p-prompt';h.innerHTML='';openDay(nextDay);};
-    $('btnRedo').onclick=()=>{const h=$('player').querySelector('.p-prompt');h.className='p-prompt';h.innerHTML='';openDay(dayIdx);};
+    if(nextDay!==null)$('btnGoNext').onclick=()=>openDay(nextDay,true);
+    $('btnRedo').onclick=()=>openDay(dayIdx,true);
   }
 
-  $('btnCheck').onclick=()=>check(false);
-  $('pInput').addEventListener('keydown',e=>{if(e.key==='Enter')check(false);});
-  $('btnStuck').onclick=()=>check(true);
-  $('btnReset').onclick=()=>{if(confirm('¿Borrar todo el progreso, las estrellas y la racha?')){state={xp:0,completed:[],streak:0,lastDate:null};save(state);paintStats();paintChips();openDay(0);}};
+  function startApp(){
+    buildPicker();
+    $('btnCheck').onclick=()=>check(false);
+    $('pInput').addEventListener('keydown',e=>{if(e.key==='Enter')check(false);});
+    $('btnStuck').onclick=()=>check(true);
+    $('startBtn').onclick=()=>$('train').scrollIntoView({behavior:'smooth'});
+    $('btnReset').onclick=()=>{if(confirm('¿Borrar todo el progreso, las estrellas y la racha?')){state={xp:0,completed:[],streak:0,lastDate:null};save(state);paintStats();buildPicker();openDay(0,true);}};
+    const firstIncomplete=DAYS.findIndex(d=>!state.completed.includes(d.n));
+    openDay(firstIncomplete===-1?0:firstIncomplete,false);
+    if(state.completed.length){$('greeting').textContent='Bienvenido de nuevo, parce. '+state.completed.length+' de 90 días completados — continúa donde lo dejaste.';}
+    window.scrollTo(0,0);
+  }
 
-  const firstIncomplete=DAYS.findIndex(d=>!state.completed.includes(d.n));
-  openDay(firstIncomplete===-1?0:firstIncomplete);
-  if(state.completed.length){$('greeting').textContent='Bienvenido de nuevo, parce. '+state.completed.length+' día'+(state.completed.length>1?'s':'')+' completado'+(state.completed.length>1?'s':'')+' — continúa donde lo dejaste.';}
+  fetch('curriculum.json',{cache:'no-cache'}).then(r=>r.json()).then(data=>{DAYS=data;startApp();})
+    .catch(()=>{picker.innerHTML='<p style="text-align:center;color:var(--rojo)">No pude cargar las lecciones — revisa tu conexión y recarga.</p>';});
 
   if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
 </script>
