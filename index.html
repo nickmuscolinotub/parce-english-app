@@ -112,6 +112,11 @@
   .feedback.miss .verdict{color:#ff9aa5}
   .feedback .es{font-family:"Fraunces";font-size:1.45rem;font-weight:700;color:#fff;margin:.4rem 0 .2rem}
   .feedback .tip{color:rgba(255,247,222,.7);font-size:.92rem}
+  .why{margin-top:.55rem;background:rgba(255,247,222,.05);border:1px solid rgba(255,247,222,.1);border-radius:12px;padding:.7rem .85rem;font-size:.9rem}
+  .why-row{color:rgba(255,247,222,.82);margin:.12rem 0}
+  .why-row .lab{color:rgba(255,247,222,.5);font-weight:700;margin-right:.35rem}
+  .why-reason{color:#ffd98a;margin-top:.4rem;line-height:1.4}
+  .why b{color:var(--amarillo);font-weight:800}
   .btn-next{margin-top:1rem;background:#fff;color:var(--ink);font-weight:800;border:none;cursor:pointer;font-family:inherit;font-size:1rem;padding:.7rem 1.3rem;border-radius:12px;transition:transform .15s}
   .btn-next:hover{transform:translateY(-2px)}
 
@@ -341,24 +346,53 @@
     $('pFeedback').className='feedback';$('pFeedback').innerHTML='';
     setTimeout(()=>$('pInput').focus(),50);
   }
-  function showFeedback(kind,it){
+  const SUBJ=['i','you','he','she','it','we','they'];
+  function esc(s){return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function cap(s){return s?s.charAt(0).toUpperCase()+s.slice(1):s;}
+  function toks(s){return norm(s).split(' ').filter(Boolean);}
+  function buildWhy(raw,it){
+    const ut=toks(raw), ct=toks(it.es);
+    if(!ut.length) return '';
+    const uSet=new Set(ut), cSet=new Set(ct);
+    const missing=ct.filter(w=>!uSet.has(w));
+    const extra=ut.filter(w=>!cSet.has(w));
+    let reasons=[];
+    if(SUBJ.includes(ct[0])&&!uSet.has(ct[0])) reasons.push('En inglés el sujeto es obligatorio: la frase empieza con <b>'+cap(ct[0])+'</b>.');
+    ['do','does','did'].forEach(d=>{if(cSet.has(d)&&!uSet.has(d))reasons.push('Las preguntas y frases negativas en inglés usan <b>'+d+'</b> + el verbo base.');});
+    ct.forEach(w=>{if(w.length>2&&w.endsWith('s')&&!uSet.has(w)&&uSet.has(w.slice(0,-1)))reasons.push('Te falta la <b>-s</b> de la tercera persona: <b>'+w+'</b>, no <b>'+w.slice(0,-1)+'</b>.');});
+    if(cSet.has('an')&&uSet.has('a'))reasons.push('Usa <b>an</b> antes de un sonido de vocal (an apple).');
+    if(cSet.has('a')&&uSet.has('an'))reasons.push('Usa <b>a</b> antes de consonante (a coffee).');
+    reasons=reasons.slice(0,2);
+    let h='<div class="why"><div class="why-row"><span class="lab">Escribiste:</span> '+esc(raw)+'</div>';
+    if(missing.length)h+='<div class="why-row"><span class="lab">Te faltó:</span> '+missing.map(esc).join(', ')+'</div>';
+    if(extra.length)h+='<div class="why-row"><span class="lab">Revisa:</span> '+extra.map(esc).join(', ')+'</div>';
+    reasons.forEach(r=>h+='<div class="why-reason">⚠️ '+r+'</div>');
+    return h+'</div>';
+  }
+  function showFeedback(kind,it,raw){
     const fb=$('pFeedback');
-    const verdict=kind==='ok'?'¡Correcto! ⭐ +'+(it.v?25:10):kind==='casi'?'¡Casi! ⭐ +5':'Así se dice 👇';
-    const tip=kind==='ok'?(it.v?'Esa es una frase completa en inglés. ¡Bien hecho!':'Clic — otra pieza en su lugar.'):kind==='casi'?'Estuviste a una letra — mira el modelo:':'No pasa nada. Léelo, dilo una vez y sigue.';
-    fb.className='feedback show '+kind;
-    fb.innerHTML='<div class="verdict">'+verdict+'</div><div class="es">'+it.es+'</div>'+(it.note?'<div class="tip" style="margin-bottom:.4rem">💡 '+it.note+'</div>':'')+'<div class="tip">'+tip+'</div>'+
-      '<button class="btn-next" id="btnNext">'+(qIdx<DAYS[dayIdx].items.length-1?'Siguiente →':'Terminar sesión ✓')+'</button>';
+    const cls=kind==='ok'?'ok':kind==='casi'?'casi':'miss';
+    const verdict=kind==='ok'?'¡Correcto! ⭐ +'+(it.v?25:10):kind==='casi'?'¡Casi! ⭐ +5':kind==='reveal'?'Así se dice 👇':'No exactamente — mira por qué 👇';
+    let body='<div class="verdict">'+verdict+'</div><div class="es">'+it.es+'</div>';
+    if(kind==='miss'||kind==='casi') body+=buildWhy(raw,it);
+    if(it.note) body+='<div class="tip" style="margin-top:.5rem">💡 '+it.note+'</div>';
+    if(kind==='ok') body+='<div class="tip">'+(it.v?'Esa es una frase completa en inglés. ¡Bien hecho!':'Clic — otra pieza en su lugar.')+'</div>';
+    if(kind==='reveal') body+='<div class="tip">No pasa nada. Léelo, dilo una vez y sigue.</div>';
+    body+='<button class="btn-next" id="btnNext">'+(qIdx<DAYS[dayIdx].items.length-1?'Siguiente →':'Terminar sesión ✓')+'</button>';
+    fb.className='feedback show '+cls;
+    fb.innerHTML=body;
     $('pInputZone').style.display='none';
     $('btnNext').onclick=next;
   }
   function check(forceReveal){
     const it=DAYS[dayIdx].items[qIdx];
-    if(forceReveal){showFeedback('miss',it);return;}
-    const a=norm($('pInput').value), b=norm(it.es);
-    if(!a){showFeedback('miss',it);return;}
-    if(a===b){awarded+=it.v?25:10;showFeedback('ok',it);}
-    else if(lev(a,b)<=2 && a.length>4){awarded+=5;showFeedback('casi',it);}
-    else{showFeedback('miss',it);}
+    const raw=$('pInput').value;
+    if(forceReveal){showFeedback('reveal',it,'');return;}
+    const a=norm(raw), b=norm(it.es);
+    if(!a){showFeedback('reveal',it,'');return;}
+    if(a===b){awarded+=it.v?25:10;showFeedback('ok',it,raw);}
+    else if(lev(a,b)<=2 && a.length>4){awarded+=5;showFeedback('casi',it,raw);}
+    else{showFeedback('miss',it,raw);}
     $('statXp').textContent=state.xp+awarded;
   }
   function next(){
