@@ -1,0 +1,15 @@
+{
+  "name": "Parce — Aprende inglés",
+  "short_name": "Parce EN",
+  "description": "Tu entrenador personal de inglés para hispanohablantes. Construye frases escribiéndolas — sin memorizar, sin presión.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFF7DE",
+  "theme_color": "#FCD116",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
