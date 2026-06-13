@@ -50,9 +50,11 @@
   .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--azul-deep);background:rgba(0,56,147,.09);padding:.4rem .85rem;border-radius:999px;margin-bottom:1.2rem}
   h1.title{font-size:clamp(2.6rem,8vw,4.4rem);line-height:.94}
   h1.title em{font-style:italic;color:var(--rojo)}
-  .byline{display:inline-flex;align-items:center;gap:.55rem;font-family:"Fraunces",Georgia,serif;font-weight:800;font-size:clamp(1.15rem,3.4vw,1.7rem);color:#fff;background:linear-gradient(135deg,var(--rojo),var(--rojo-deep));padding:.75rem 1.7rem;border-radius:999px;margin:1.5rem 0 .4rem;box-shadow:0 16px 34px -10px rgba(206,17,38,.6);animation:bylinePulse 2.4s ease-in-out infinite}
+  .byline{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.35rem;text-align:center;font-family:"Fraunces",Georgia,serif;font-weight:800;font-size:clamp(1.05rem,3vw,1.55rem);line-height:1.18;color:#fff;background:linear-gradient(135deg,var(--rojo),var(--rojo-deep));padding:.7rem 1.4rem;border-radius:22px;margin:1.4rem auto .45rem;max-width:92%;box-shadow:0 14px 30px -12px rgba(206,17,38,.5);animation:bylineGlow 2.8s ease-in-out infinite;will-change:box-shadow}
   .byline strong{color:var(--amarillo)}
-  @keyframes bylinePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+  @keyframes bylineGlow{0%,100%{box-shadow:0 14px 30px -12px rgba(206,17,38,.5)}50%{box-shadow:0 18px 42px -8px rgba(206,17,38,.85)}}
+  .byjoke{font-style:italic;color:var(--ink-soft);font-size:.98rem;max-width:36ch;margin:.2rem auto 0;line-height:1.45}
+  @media(prefers-reduced-motion:reduce){.byline{animation:none}}
   .promise{font-family:"Fraunces";font-style:italic;font-size:1.12rem;line-height:1.45;color:var(--ink-soft);max-width:42ch;margin:1rem auto 1.8rem}
   .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:inherit;font-weight:700;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:1rem 1.7rem;font-size:1.05rem;transition:transform .2s,box-shadow .2s}
   .btn-primary{background:var(--rojo);color:#fff;box-shadow:0 12px 28px -10px rgba(206,17,38,.6)}
@@ -190,6 +192,7 @@
     <span class="eyebrow">🇨🇴 Para hispanohablantes · tu entrenador personal de inglés</span>
     <h1 class="title">Construye el inglés,<br>frase por <em>frase</em>.</h1>
     <div class="byline">💛 Hecho por <strong>Nick</strong>, para <strong>Mariana</strong></div>
+    <p class="byjoke">Ya pasaste los exámenes… pero no se me confíe, parce: ¡todavía le toca estudiar! 😼📚</p>
     <p class="promise" id="greeting">Escribe cada respuesta en inglés. Sin memorizar, sin presión, sin reprobar — solo vas uniendo piezas que ya conoces en frases más grandes. 90 días, de cero a una conversación real.</p>
     <button class="btn btn-primary" id="startBtn">Empezar la lección de hoy →</button>
     <div class="how" style="margin-top:34px">
