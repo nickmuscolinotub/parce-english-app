@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Parce · Aprende inglés</title>
 <meta name="description" content="Parce — tu entrenador personal de inglés. Construye frases escribiéndolas. Sin memorizar, sin presión. Curso completo de 90 días.">
-<meta name="theme-color" content="#FCD116">
+<meta name="theme-color" content="#F498C2">
 <link rel="manifest" href="manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --amarillo:#FCD116;--amarillo-deep:#F2B807;
-    --crema:#FFF7DE;--crema-2:#FFFBF0;
-    --azul:#003893;--azul-deep:#00266B;
-    --rojo:#CE1126;--rojo-deep:#A60D1C;
-    --ink:#0A1733;--ink-soft:#2A3554;--verde:#2F7D4F;
-    --line:rgba(10,23,51,.14);
+    --amarillo:#FF7FB6;--amarillo-deep:#F05C9C;
+    --crema:#FFEFF6;--crema-2:#FFF8FC;
+    --azul:#2456C8;--azul-deep:#16357F;
+    --rojo:#E01E79;--rojo-deep:#B11460;
+    --ink:#15203F;--ink-soft:#3C4775;--verde:#2BA3D4;
+    --line:rgba(21,32,63,.14);
     --shadow:0 18px 40px -18px rgba(0,38,107,.45);
     --shadow-lift:0 30px 70px -24px rgba(0,38,107,.55);
     --maxw:920px;
@@ -34,10 +34,10 @@
   .flagbar{position:fixed;top:0;left:0;right:0;height:6px;z-index:200;
     background:linear-gradient(to right,var(--amarillo) 0 50%,var(--azul) 50% 75%,var(--rojo) 75% 100%)}
 
-  .appbar{position:sticky;top:6px;z-index:190;background:rgba(255,247,222,.82);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
+  .appbar{position:sticky;top:6px;z-index:190;background:rgba(255,239,246,.82);backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
   .appbar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
   .brand{font-family:"Fraunces";font-weight:900;font-size:1.3rem;letter-spacing:-.03em;display:flex;align-items:center;gap:.45rem}
-  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--rojo);box-shadow:0 0 0 4px rgba(206,17,38,.18)}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--rojo);box-shadow:0 0 0 4px rgba(224,30,121,.18)}
   .stats{display:flex;gap:.9rem;font-weight:800;font-size:.95rem}
   .stats .s{display:flex;align-items:center;gap:.3rem;background:rgba(0,38,107,.07);padding:.3rem .7rem;border-radius:99px}
   .stats .s.xp{color:var(--azul-deep)}
@@ -45,20 +45,20 @@
 
   header.hero{position:relative;padding:64px 0 40px;overflow:hidden;text-align:center}
   header.hero::before{content:"";position:absolute;inset:0;z-index:0;
-    background:radial-gradient(70% 70% at 50% -10%,rgba(252,209,22,.9),transparent 62%),linear-gradient(180deg,var(--crema-2),var(--crema))}
+    background:radial-gradient(70% 70% at 50% -10%,rgba(255,127,182,.9),transparent 62%),linear-gradient(180deg,var(--crema-2),var(--crema))}
   .hero .wrap{position:relative;z-index:1}
   .eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--azul-deep);background:rgba(0,56,147,.09);padding:.4rem .85rem;border-radius:999px;margin-bottom:1.2rem}
   h1.title{font-size:clamp(2.6rem,8vw,4.4rem);line-height:.94}
   h1.title em{font-style:italic;color:var(--rojo)}
-  .byline{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.35rem;text-align:center;font-family:"Fraunces",Georgia,serif;font-weight:800;font-size:clamp(1.05rem,3vw,1.55rem);line-height:1.18;color:#fff;background:linear-gradient(135deg,var(--rojo),var(--rojo-deep));padding:.7rem 1.4rem;border-radius:22px;margin:1.4rem auto .45rem;max-width:92%;box-shadow:0 14px 30px -12px rgba(206,17,38,.5);animation:bylineGlow 2.8s ease-in-out infinite;will-change:box-shadow}
+  .byline{display:inline-flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.35rem;text-align:center;font-family:"Fraunces",Georgia,serif;font-weight:800;font-size:clamp(1.05rem,3vw,1.55rem);line-height:1.18;color:#fff;background:linear-gradient(135deg,var(--azul),var(--azul-deep));padding:.7rem 1.4rem;border-radius:22px;margin:1.4rem auto .45rem;max-width:92%;box-shadow:0 14px 30px -12px rgba(36,86,200,.5);animation:bylineGlow 2.8s ease-in-out infinite;will-change:box-shadow}
   .byline strong{color:var(--amarillo)}
-  @keyframes bylineGlow{0%,100%{box-shadow:0 14px 30px -12px rgba(206,17,38,.5)}50%{box-shadow:0 18px 42px -8px rgba(206,17,38,.85)}}
+  @keyframes bylineGlow{0%,100%{box-shadow:0 14px 30px -12px rgba(36,86,200,.5)}50%{box-shadow:0 18px 42px -8px rgba(36,86,200,.85)}}
   .byjoke{font-style:italic;color:var(--ink-soft);font-size:.98rem;max-width:36ch;margin:.2rem auto 0;line-height:1.45}
   @media(prefers-reduced-motion:reduce){.byline{animation:none}}
   .promise{font-family:"Fraunces";font-style:italic;font-size:1.12rem;line-height:1.45;color:var(--ink-soft);max-width:42ch;margin:1rem auto 1.8rem}
   .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:inherit;font-weight:700;text-decoration:none;border:none;cursor:pointer;border-radius:999px;padding:1rem 1.7rem;font-size:1.05rem;transition:transform .2s,box-shadow .2s}
-  .btn-primary{background:var(--rojo);color:#fff;box-shadow:0 12px 28px -10px rgba(206,17,38,.6)}
-  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 36px -12px rgba(206,17,38,.7)}
+  .btn-primary{background:var(--rojo);color:#fff;box-shadow:0 12px 28px -10px rgba(224,30,121,.6)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 36px -12px rgba(224,30,121,.7)}
 
   .how{padding:10px 0 0}
   .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
@@ -83,47 +83,47 @@
   .day-chip{position:relative;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink);font-family:"Fraunces";font-weight:800;font-size:.95rem;width:46px;height:46px;border-radius:13px;transition:all .15s;display:flex;align-items:center;justify-content:center}
   .day-chip:hover{transform:translateY(-2px)}
   .day-chip.active{background:var(--azul);color:#fff;border-color:var(--azul)}
-  .day-chip.done{background:rgba(47,125,79,.12);border-color:rgba(47,125,79,.4)}
+  .day-chip.done{background:rgba(43,163,212,.12);border-color:rgba(43,163,212,.4)}
   .day-chip.done.active{background:var(--azul);color:#fff}
   .day-chip.done::after{content:"✓";position:absolute;top:-5px;right:-5px;width:18px;height:18px;background:var(--verde);color:#fff;font-family:sans-serif;font-size:.65rem;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 6px rgba(0,0,0,.2)}
 
   .player{background:var(--ink);border-radius:26px;padding:clamp(22px,4vw,40px);box-shadow:var(--shadow-lift);color:var(--crema);position:relative;overflow:hidden}
   .player::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(to right,var(--amarillo) 0 50%,var(--azul) 50% 75%,var(--rojo) 75% 100%)}
   .p-top{display:flex;justify-content:space-between;align-items:center;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--amarillo);margin-bottom:1.3rem}
-  .p-label{color:rgba(255,247,222,.6);font-weight:600;font-size:.92rem;margin-bottom:.5rem}
+  .p-label{color:rgba(255,239,246,.6);font-weight:600;font-size:.92rem;margin-bottom:.5rem}
   .p-prompt{font-family:"Fraunces";font-size:clamp(1.5rem,4.4vw,2.1rem);font-weight:700;color:#fff;line-height:1.14;min-height:1.2em}
-  .p-note{margin-top:.6rem;color:rgba(255,247,222,.55);font-size:.86rem;font-style:italic}
+  .p-note{margin-top:.6rem;color:rgba(255,239,246,.55);font-size:.86rem;font-style:italic}
 
   .answer-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.3rem}
-  #pInput{flex:1;min-width:200px;font-family:inherit;font-size:1.15rem;padding:.9rem 1.1rem;border-radius:14px;border:2px solid rgba(255,247,222,.2);background:rgba(255,247,222,.06);color:#fff;outline:none;transition:border-color .2s}
+  #pInput{flex:1;min-width:200px;font-family:inherit;font-size:1.15rem;padding:.9rem 1.1rem;border-radius:14px;border:2px solid rgba(255,239,246,.2);background:rgba(255,239,246,.06);color:#fff;outline:none;transition:border-color .2s}
   #pInput:focus{border-color:var(--amarillo)}
-  #pInput::placeholder{color:rgba(255,247,222,.4)}
+  #pInput::placeholder{color:rgba(255,239,246,.4)}
   .btn-check{background:var(--amarillo);color:var(--ink);font-weight:800;border:none;cursor:pointer;font-family:inherit;font-size:1.05rem;padding:0 1.6rem;border-radius:14px;transition:transform .15s,filter .2s}
   .btn-check:hover{transform:translateY(-2px);filter:brightness(1.05)}
-  .stuck{display:inline-block;margin-top:.9rem;color:rgba(255,247,222,.55);font-size:.88rem;text-decoration:underline;cursor:pointer;background:none;border:none;font-family:inherit}
+  .stuck{display:inline-block;margin-top:.9rem;color:rgba(255,239,246,.55);font-size:.88rem;text-decoration:underline;cursor:pointer;background:none;border:none;font-family:inherit}
   .stuck:hover{color:var(--amarillo)}
 
   .feedback{margin-top:1.4rem;border-radius:16px;padding:1.1rem 1.2rem;opacity:0;max-height:0;overflow:hidden;transition:opacity .35s,max-height .35s,padding .35s}
   .feedback.show{opacity:1;max-height:360px}
-  .feedback.ok{background:rgba(47,125,79,.18);border:1px solid rgba(47,125,79,.5)}
-  .feedback.casi{background:rgba(242,184,7,.16);border:1px solid rgba(242,184,7,.5)}
-  .feedback.miss{background:rgba(206,17,38,.16);border:1px solid rgba(206,17,38,.45)}
+  .feedback.ok{background:rgba(43,163,212,.18);border:1px solid rgba(43,163,212,.5)}
+  .feedback.casi{background:rgba(240,140,180,.16);border:1px solid rgba(240,140,180,.5)}
+  .feedback.miss{background:rgba(224,30,121,.16);border:1px solid rgba(224,30,121,.45)}
   .feedback .verdict{font-weight:800;font-size:1.05rem}
-  .feedback.ok .verdict{color:#7fe0a6}
+  .feedback.ok .verdict{color:#8fd6f2}
   .feedback.casi .verdict{color:var(--amarillo)}
-  .feedback.miss .verdict{color:#ff9aa5}
+  .feedback.miss .verdict{color:#ff9ec4}
   .feedback .es{font-family:"Fraunces";font-size:1.45rem;font-weight:700;color:#fff;margin:.4rem 0 .2rem}
-  .feedback .tip{color:rgba(255,247,222,.7);font-size:.92rem}
-  .why{margin-top:.55rem;background:rgba(255,247,222,.05);border:1px solid rgba(255,247,222,.1);border-radius:12px;padding:.7rem .85rem;font-size:.9rem}
-  .why-row{color:rgba(255,247,222,.82);margin:.12rem 0}
-  .why-row .lab{color:rgba(255,247,222,.5);font-weight:700;margin-right:.35rem}
-  .why-reason{color:#ffd98a;margin-top:.4rem;line-height:1.4}
+  .feedback .tip{color:rgba(255,239,246,.7);font-size:.92rem}
+  .why{margin-top:.55rem;background:rgba(255,239,246,.05);border:1px solid rgba(255,239,246,.1);border-radius:12px;padding:.7rem .85rem;font-size:.9rem}
+  .why-row{color:rgba(255,239,246,.82);margin:.12rem 0}
+  .why-row .lab{color:rgba(255,239,246,.5);font-weight:700;margin-right:.35rem}
+  .why-reason{color:#ffc7e0;margin-top:.4rem;line-height:1.4}
   .why b{color:var(--amarillo);font-weight:800}
   .btn-next{margin-top:1rem;background:#fff;color:var(--ink);font-weight:800;border:none;cursor:pointer;font-family:inherit;font-size:1rem;padding:.7rem 1.3rem;border-radius:12px;transition:transform .15s}
   .btn-next:hover{transform:translateY(-2px)}
 
   .p-prog{display:flex;gap:6px;margin-top:1.5rem}
-  .p-prog span{height:5px;flex:1;border-radius:99px;background:rgba(255,247,222,.18);transition:background .3s}
+  .p-prog span{height:5px;flex:1;border-radius:99px;background:rgba(255,239,246,.18);transition:background .3s}
   .p-prog span.done{background:var(--amarillo)}
 
   .p-finish{text-align:center;padding:.5rem 0}
@@ -145,11 +145,11 @@
   .journey{background:var(--azul-deep);color:var(--crema)}
   .journey .kicker{color:var(--amarillo)}
   .stages{display:grid;gap:.7rem}
-  .stage{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;background:rgba(255,247,222,.06);border:1px solid rgba(255,247,222,.12);border-radius:14px;padding:1rem 1.2rem}
+  .stage{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;background:rgba(255,239,246,.06);border:1px solid rgba(255,239,246,.12);border-radius:14px;padding:1rem 1.2rem}
   .stage .sn{font-family:"Fraunces";font-weight:900;font-size:1.6rem;color:var(--amarillo);width:2rem;text-align:center}
   .stage h4{font-size:1.08rem;color:#fff}
   .stage h4 em{font-style:normal;color:var(--amarillo)}
-  .stage p{color:rgba(255,247,222,.7);font-size:.88rem;margin-top:.15rem}
+  .stage p{color:rgba(255,239,246,.7);font-size:.88rem;margin-top:.15rem}
   .stage .meta{text-align:right;font-size:.78rem;font-weight:700;color:var(--amarillo);white-space:nowrap}
   @media(max-width:560px){.stage{grid-template-columns:auto 1fr}.stage .meta{display:none}}
 
@@ -168,10 +168,10 @@
   footer .flagdots{display:flex;gap:.5rem;justify-content:center;margin-bottom:1.1rem}
   footer .flagdots span{width:13px;height:13px;border-radius:50%}
   footer h3{font-size:clamp(1.5rem,4vw,2.1rem);margin-bottom:.6rem}
-  footer p{color:rgba(255,247,222,.6);max-width:48ch;margin:0 auto;font-size:.92rem}
-  footer .reset{margin-top:1.6rem;background:none;border:1px solid rgba(255,247,222,.25);color:rgba(255,247,222,.6);font-family:inherit;font-size:.82rem;padding:.5rem 1rem;border-radius:99px;cursor:pointer}
+  footer p{color:rgba(255,239,246,.6);max-width:48ch;margin:0 auto;font-size:.92rem}
+  footer .reset{margin-top:1.6rem;background:none;border:1px solid rgba(255,239,246,.25);color:rgba(255,239,246,.6);font-family:inherit;font-size:.82rem;padding:.5rem 1rem;border-radius:99px;cursor:pointer}
   footer .reset:hover{color:#fff;border-color:#fff}
-  footer .fine{margin-top:1.6rem;font-size:.76rem;color:rgba(255,247,222,.38)}
+  footer .fine{margin-top:1.6rem;font-size:.76rem;color:rgba(255,239,246,.38)}
 </style>
 </head>
 <body>
@@ -192,7 +192,7 @@
     <span class="eyebrow">🇨🇴 Para hispanohablantes · tu entrenador personal de inglés</span>
     <h1 class="title">Construye el inglés,<br>frase por <em>frase</em>.</h1>
     <div class="byline">💛 Hecho por <strong>Nick</strong>, para <strong>Mariana</strong></div>
-    <p class="byjoke">Ya pasaste los exámenes… pero no se me confíe, parce: ¡todavía le toca estudiar! 😼📚</p>
+    <p class="byjoke">Ya pasaste los exámenes… pero no se me confíe, parce: todavía le toca estudiar 😼📚</p>
     <p class="promise" id="greeting">Escribe cada respuesta en inglés. Sin memorizar, sin presión, sin reprobar — solo vas uniendo piezas que ya conoces en frases más grandes. 90 días, de cero a una conversación real.</p>
     <button class="btn btn-primary" id="startBtn">Empezar la lección de hoy →</button>
     <div class="how" style="margin-top:34px">
@@ -270,11 +270,11 @@
 <div id="catPop" aria-hidden="true">
   <span class="spark s1">⭐</span><span class="spark s2">💛</span><span class="spark s3">✨</span>
   <svg class="cat" viewBox="0 0 120 110" width="100" height="92" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="30,42 31,8 58,32" fill="#E8902A"/>
-    <polygon points="90,42 89,8 62,32" fill="#E8902A"/>
+    <polygon points="30,42 31,8 58,32" fill="#E0559A"/>
+    <polygon points="90,42 89,8 62,32" fill="#E0559A"/>
     <polygon points="36,36 37,18 52,32" fill="#F7B5C4"/>
     <polygon points="84,36 83,18 68,32" fill="#F7B5C4"/>
-    <ellipse cx="60" cy="64" rx="40" ry="36" fill="#F2A33C"/>
+    <ellipse cx="60" cy="64" rx="40" ry="36" fill="#F48FB1"/>
     <circle cx="34" cy="72" r="8" fill="#F7B5C4" opacity=".55"/>
     <circle cx="86" cy="72" r="8" fill="#F7B5C4" opacity=".55"/>
     <path d="M40 60 q6 -9 12 0" stroke="#2A1B0E" stroke-width="4" fill="none" stroke-linecap="round"/>
@@ -415,11 +415,11 @@
     const fb=$('pFeedback');
     if(kind==='ok') celebrateCat(it.v);
     const cls=kind==='ok'?'ok':kind==='casi'?'casi':'miss';
-    const verdict=kind==='ok'?'¡Correcto! ⭐ +'+(it.v?25:10):kind==='casi'?'¡Casi! ⭐ +5':kind==='reveal'?'Así se dice 👇':'No exactamente — mira por qué 👇';
+    const verdict=kind==='ok'?'Correcto ⭐ +'+(it.v?25:10):kind==='casi'?'Casi ⭐ +5':kind==='reveal'?'Así se dice 👇':'No exactamente — mira por qué 👇';
     let body='<div class="verdict">'+verdict+'</div><div class="es">'+it.es+'</div>';
     if(kind==='miss'||kind==='casi') body+=buildWhy(raw,it);
     if(it.note) body+='<div class="tip" style="margin-top:.5rem">💡 '+it.note+'</div>';
-    if(kind==='ok') body+='<div class="tip">'+(it.v?'Esa es una frase completa en inglés. ¡Bien hecho!':'Clic — otra pieza en su lugar.')+'</div>';
+    if(kind==='ok') body+='<div class="tip">'+(it.v?'Esa es una frase completa en inglés. Bien hecho.':'Clic — otra pieza en su lugar.')+'</div>';
     if(kind==='reveal') body+='<div class="tip">No pasa nada. Léelo, dilo una vez y sigue.</div>';
     body+='<button class="btn-next" id="btnNext">'+(qIdx<DAYS[dayIdx].items.length-1?'Siguiente →':'Terminar sesión ✓')+'</button>';
     fb.className='feedback show '+cls;
@@ -453,10 +453,10 @@
     $('pDay').textContent='Día '+DAYS[dayIdx].n+' completo';
     $('pCount').textContent='';$('pNote').textContent='';
     const host=$('pPrompt');host.className='p-prompt';
-    host.innerHTML='<div class="p-finish"><div class="big">🎉</div><div class="es">¡Bien hecho, parce!</div>'+
-      '<p style="color:rgba(255,247,222,.72);margin:.4rem 0 1rem">Construiste '+DAYS[dayIdx].items.length+' frases. <span class="xp-pop">+'+awarded+' ⭐</span> · '+state.completed.length+'/90 días</p>'+
-      (nextDay!==null?'<button class="btn-check" id="btnGoNext" style="padding:.8rem 1.5rem">Día '+DAYS[nextDay].n+' →</button> ':'<p style="color:var(--amarillo);font-family:Fraunces;font-size:1.3rem">🏆 ¡Terminaste los 90 días! Now you speak English.</p>')+
-      ' <button class="btn-next" id="btnRedo" style="background:transparent;border:1px solid rgba(255,247,222,.3);color:var(--crema)">Repetir este día ↻</button></div>';
+    host.innerHTML='<div class="p-finish"><div class="big">🎉</div><div class="es">Bien hecho, parce</div>'+
+      '<p style="color:rgba(255,239,246,.72);margin:.4rem 0 1rem">Construiste '+DAYS[dayIdx].items.length+' frases. <span class="xp-pop">+'+awarded+' ⭐</span> · '+state.completed.length+'/90 días</p>'+
+      (nextDay!==null?'<button class="btn-check" id="btnGoNext" style="padding:.8rem 1.5rem">Día '+DAYS[nextDay].n+' →</button> ':'<p style="color:var(--amarillo);font-family:Fraunces;font-size:1.3rem">🏆 Terminaste los 90 días. Now you speak English.</p>')+
+      ' <button class="btn-next" id="btnRedo" style="background:transparent;border:1px solid rgba(255,239,246,.3);color:var(--crema)">Repetir este día ↻</button></div>';
     if(nextDay!==null)$('btnGoNext').onclick=()=>openDay(nextDay,true);
     $('btnRedo').onclick=()=>openDay(dayIdx,true);
   }
